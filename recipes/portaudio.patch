@@ -1,0 +1,14 @@
+--- a/configure
++++ b/configure
+@@ -15861,9 +15861,4 @@
+           *)
+-                                                                                    if xcrun --sdk macosx10.5 --show-sdk-path >/dev/null 2>&1 ; then
+-                 mac_version_min="-mmacosx-version-min=10.5"
+-                 mac_sysroot="-isysroot $(xcrun --sdk macosx10.5 --show-sdk-path)"
+-              else
+-                 mac_version_min="-mmacosx-version-min=10.6"
+-                 mac_sysroot="-isysroot $(xcrun --sdk macosx --show-sdk-path)"
+-              fi
++                 mac_version_min=""
++                 mac_sysroot="-isysroot $(xcrun --show-sdk-path)"
+           esac
