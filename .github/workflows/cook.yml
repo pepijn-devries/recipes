@@ -65,7 +65,10 @@ jobs:
             echo "=== Build: darwin$OS_VER"
             sudo xcode-select -s /Library/Developer/CommandLineTools && xcode-select -p
           else
-            echo "::warning::NOTE: no SDKURL provided, so Target/SDK are undefined!"
+            echo "=== No SDKURL provided, using system SDK ==="
+            echo "SDKROOT=$(xcrun --show-sdk-path)" >> $GITHUB_ENV
+            echo "MACOSX_DEPLOYMENT_TARGET=$(xcrun --show-sdk-platform-version)" >> $GITHUB_ENV
+            echo "OS_VER=20" >> $GITHUB_ENV 
           fi
           pip3 install --user 'cmake<4.0.0' ninja meson
           PYLIB=$(ls -d ~/Library/Python/3.*/bin | head -n1)
