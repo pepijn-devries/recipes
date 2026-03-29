@@ -12,3 +12,14 @@
 +                 mac_version_min=""
 +                 mac_sysroot="-isysroot $(xcrun --show-sdk-path)"
            esac
+--- a/src/common/pa_converters.c
++++ b/src/common/pa_converters.c
+@@ -1420,2 +1420,3 @@
+    signed char *dest =  (signed char*)destinationBuffer;
++    (void)dest;
+    (void)ditherGenerator; /* unused parameter */
+@@ -1460,2 +1460,4 @@
+    unsigned char *dest =  (unsigned char*)destinationBuffer;
++    (void)src;
++    (void)dest;
+    (void)ditherGenerator; /* unused parameter */
