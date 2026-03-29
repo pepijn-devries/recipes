@@ -14,13 +14,20 @@
            esac
 --- a/src/common/pa_converters.c
 +++ b/src/common/pa_converters.c
-@@ -1420,2 +1420,3 @@
-    signed char *dest =  (signed char*)destinationBuffer;
-+   (void)dest;
-    (void)ditherGenerator; /* unused parameter */
-@@ -1459,3 +1460,5 @@
+@@ -1418,6 +1418,7 @@
+ {
      PaInt16 *src = (PaInt16*)sourceBuffer;
-     unsigned char *dest =  (unsigned char*)destinationBuffer;
-+    (void)src;
+     signed char *dest =  (signed char*)destinationBuffer;
 +    (void)dest;
      (void)ditherGenerator; /* unused parameter */
+ 
+     while( count-- )
+@@ -1458,6 +1459,8 @@
+ {
+     PaInt16 *src = (PaInt16*)sourceBuffer;
+     unsigned char *dest =  (unsigned char*)destinationBuffer;
++    (void)dest;
++    (void)src;
+     (void)ditherGenerator; /* unused parameter */
+ 
+     while( count-- )
